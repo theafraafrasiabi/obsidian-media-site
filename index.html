@@ -11,7 +11,7 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Oswald:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Oswald:wght@300;400;500&display=swap" rel="stylesheet">
     
     <script>
         tailwind.config = {
@@ -35,32 +35,43 @@
     <style>
         body { background-color: #0A0A0A; color: #E5E5E5; }
         .hero-text-shadow { text-shadow: 0px 10px 30px rgba(0,0,0,0.9); }
+        
+        /* The Ghost Blur Effect */
+        .nav-fade {
+            /* Black to Transparent Gradient */
+            background: linear-gradient(to bottom, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100%);
+            /* The Blur */
+            backdrop-filter: blur(12px);
+            /* The Mask: Makes the blur fade out at the bottom */
+            -webkit-mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+            mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+        }
     </style>
 </head>
 <body class="antialiased selection:bg-charcoalBlue selection:text-alabaster">
 
-    <nav class="fixed w-full z-50 bg-onyx/90 backdrop-blur-md border-b border-charcoalBlue/50">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+    <nav class="fixed w-full z-50 h-32 nav-fade top-0 left-0">
+        <div class="max-w-7xl mx-auto px-6 py-6 flex justify-between items-start">
             <div class="w-48">
-                <img src="Logo-obsidian-v2-medium.png" alt="Obsidian Media Services" class="h-12 w-auto object-contain">
+                <img src="Logo-obsidian-v2-medium.png" alt="Obsidian Media Services" class="h-12 w-auto object-contain opacity-90">
             </div>
             
-            <div class="hidden md:flex space-x-8 text-sm font-sans tracking-wide text-dimGrey">
-                <a href="#services" class="hover:text-alabaster transition duration-300">Services</a>
-                <a href="#network" class="hover:text-alabaster transition duration-300">Network</a>
-                <a href="#contact" class="hover:text-alabaster transition duration-300">Contact</a>
+            <div class="hidden md:flex space-x-8 text-sm font-sans tracking-wide text-alabaster/70 pt-2">
+                <a href="#services" class="hover:text-white transition duration-300">Services</a>
+                <a href="#network" class="hover:text-white transition duration-300">Network</a>
+                <a href="#contact" class="hover:text-white transition duration-300">Contact</a>
             </div>
         </div>
     </nav>
 
     <header class="relative h-screen w-full flex flex-col justify-center items-center text-center overflow-hidden">
         <div class="absolute inset-0 z-0">
-            <img src="hero.jpg" alt="Obsidian Hero" class="w-full h-full object-cover opacity-50">
-            <div class="absolute inset-0 bg-gradient-to-t from-onyx via-transparent to-onyx/30"></div>
+            <img src="hero.jpg" alt="Obsidian Hero" class="w-full h-full object-cover opacity-60">
+            <div class="absolute inset-0 bg-gradient-to-t from-onyx via-transparent to-onyx/40"></div>
         </div>
 
-        <div class="z-10 w-full px-4 flex flex-col items-center">
-            <h1 class="hero-text-shadow font-heading font-bold text-[9vw] lg:text-[6rem] leading-none tracking-tight mb-6 text-alabaster whitespace-nowrap">
+        <div class="z-10 w-full px-4 flex flex-col items-center pt-20">
+            <h1 class="hero-text-shadow font-heading font-medium text-[9vw] lg:text-[6rem] leading-none tracking-tight mb-6 text-alabaster whitespace-nowrap">
                 Sharp. Precise. Obsidian.
             </h1>
             
@@ -68,40 +79,42 @@
                 Specialized Equipment Trading & Creative Consulting.
             </p>
             
-            <a href="#contact" class="inline-block border border-dimGrey px-10 py-4 text-xs font-heading tracking-[0.2em] text-alabaster hover:bg-alabaster hover:text-onyx hover:border-alabaster transition duration-300 uppercase bg-black/20 backdrop-blur-sm rounded-lg">
+            <a href="#contact" class="inline-block border border-dimGrey/50 px-10 py-4 text-xs font-heading tracking-[0.2em] text-alabaster hover:bg-alabaster hover:text-onyx hover:border-alabaster transition duration-300 uppercase bg-black/20 backdrop-blur-sm rounded-lg">
                 Initialize Project
             </a>
         </div>
     </header>
 
-    <section id="services" class="py-32 bg-onyx">
+    <section id="services" class="py-32 bg-onyx relative">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid md:grid-cols-2 gap-8">
-                <div class="group p-12 bg-graphite border border-charcoalBlue hover:border-dimGrey transition duration-500 rounded-2xl">
+                <div class="group p-12 bg-graphite transition duration-500 rounded-2xl hover:bg-[#333]">
                     <h3 class="font-heading text-3xl mb-6 text-alabaster">Equipment Trading</h3>
-                    <p class="font-sans text-dimGrey leading-relaxed text-lg font-light">
+                    <p class="font-sans text-dimGrey leading-relaxed text-lg font-light group-hover:text-alabaster/80 transition duration-300">
                         Authorized trading of specialized photography and cinematography hardware. We supply the infrastructure for high-fidelity production.
                     </p>
                     <div class="mt-8 w-12 h-[1px] bg-charcoalBlue group-hover:bg-alabaster transition duration-500"></div>
                 </div>
 
-                <div class="group p-12 bg-graphite border border-charcoalBlue hover:border-dimGrey transition duration-500 rounded-2xl">
+                <div class="group p-12 bg-graphite transition duration-500 rounded-2xl hover:bg-[#333]">
                     <h3 class="font-heading text-3xl mb-6 text-alabaster">Creative Services</h3>
-                    <p class="font-sans text-dimGrey leading-relaxed text-lg font-light">
+                    <p class="font-sans text-dimGrey leading-relaxed text-lg font-light group-hover:text-alabaster/80 transition duration-300">
                         From brand identity to full-scale production management. We provide the intellectual infrastructure for your visual presence.
                     </p>
                     <div class="mt-8 w-12 h-[1px] bg-charcoalBlue group-hover:bg-alabaster transition duration-500"></div>
                 </div>
             </div>
         </div>
+        
+        <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-8 h-[2px] bg-dimGrey/30"></div>
     </section>
 
-    <section id="network" class="py-32 bg-onyx border-t border-charcoalBlue">
+    <section id="network" class="py-32 bg-onyx">
         <div class="max-w-7xl mx-auto px-6 text-center">
             <h2 class="font-heading text-4xl font-bold mb-16 text-alabaster tracking-wide">THE ECOSYSTEM</h2>
             <div class="grid md:grid-cols-2 gap-8">
                 
-                <a href="https://www.afraafrasiabi.studio" target="_blank" class="group relative block h-96 bg-graphite overflow-hidden rounded-2xl border border-charcoalBlue hover:border-alabaster transition duration-500">
+                <a href="https://www.afraafrasiabi.studio" target="_blank" class="group relative block h-96 bg-graphite overflow-hidden rounded-2xl">
                     <div class="absolute inset-0">
                         <img src="Pherein-the-studio.jpg" alt="The Studio" class="w-full h-full object-cover opacity-60 group-hover:opacity-40 transition duration-700 group-hover:scale-105">
                     </div>
@@ -111,7 +124,7 @@
                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20"></div>
                 </a>
                 
-                <a href="https://www.afraafrasiabi.com" target="_blank" class="group relative block h-96 bg-graphite overflow-hidden rounded-2xl border border-charcoalBlue hover:border-alabaster transition duration-500">
+                <a href="https://www.afraafrasiabi.com" target="_blank" class="group relative block h-96 bg-graphite overflow-hidden rounded-2xl">
                     <div class="absolute inset-0">
                         <img src="The-artist.jpg" alt="The Artist" class="w-full h-full object-cover opacity-60 group-hover:opacity-40 transition duration-700 group-hover:scale-105">
                     </div>
@@ -124,9 +137,9 @@
         </div>
     </section>
 
-    <footer id="contact" class="py-20 bg-onyx border-t border-charcoalBlue text-center">
+    <footer id="contact" class="py-20 bg-onyx text-center border-t border-dimGrey/10">
         <div class="max-w-md mx-auto px-6">
-            <h4 class="font-heading text-xl font-bold mb-6 text-alabaster tracking-widest">OBSIDIAN MEDIA SERVICES</h4>
+            <h4 class="font-heading text-xl font-light mb-6 text-alabaster tracking-widest">OBSIDIAN MEDIA SERVICES</h4>
             <div class="flex flex-col space-y-4 font-sans text-dimGrey text-sm tracking-wide">
                 <p>Dubai, UAE</p>
                 <a href="tel:+971509875258" class="hover:text-alabaster transition duration-300">+971 50 987 5258</a>
