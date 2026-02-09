@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Obsidian Media Services</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Oswald:wght@400;500;700&display=swap" rel="stylesheet">
@@ -14,15 +15,15 @@
             theme: {
                 extend: {
                     colors: {
-                        onyx: '#0A0A0A',
-                        graphite: '#2D2D2D',
-                        dimGrey: '#707070',
-                        alabaster: '#E5E5E5',
-                        charcoalBlue: '#2E3A49',
+                        onyx: '#0A0A0A',       /* Your Palette */
+                        graphite: '#2D2D2D',   /* Your Palette */
+                        dimGrey: '#707070',    /* Your Palette */
+                        alabaster: '#E5E5E5',  /* Your Palette */
+                        charcoalBlue: '#2E3A49', /* Your Palette */
                     },
                     fontFamily: {
                         sans: ['Lato', 'sans-serif'],
-                        heading: ['Oswald', 'sans-serif'], /* Placeholder for Acme Gothic Condensed */
+                        heading: ['Oswald', 'sans-serif'], 
                     }
                 }
             }
@@ -30,15 +31,16 @@
     </script>
     <style>
         body { background-color: #0A0A0A; color: #E5E5E5; }
-        .hero-text-shadow { text-shadow: 0px 4px 20px rgba(0,0,0,0.8); }
+        /* Text shadow to make it pop off the dark image */
+        .hero-text-shadow { text-shadow: 0px 10px 30px rgba(0,0,0,0.9); }
     </style>
 </head>
-<body class="antialiased selection:bg-charcoalBlue selection:text-white">
+<body class="antialiased selection:bg-charcoalBlue selection:text-alabaster">
 
-    <nav class="fixed w-full z-50 bg-onyx/90 backdrop-blur-sm border-b border-charcoalBlue">
+    <nav class="fixed w-full z-50 bg-onyx/90 backdrop-blur-md border-b border-charcoalBlue/50">
         <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
             <div class="text-2xl font-heading font-bold tracking-wider uppercase text-alabaster">Obsidian</div>
-            <div class="space-x-8 text-sm font-sans tracking-wide text-dimGrey">
+            <div class="hidden md:flex space-x-8 text-sm font-sans tracking-wide text-dimGrey">
                 <a href="#services" class="hover:text-alabaster transition duration-300">Services</a>
                 <a href="#network" class="hover:text-alabaster transition duration-300">Network</a>
                 <a href="#contact" class="hover:text-alabaster transition duration-300">Contact</a>
@@ -46,22 +48,22 @@
         </div>
     </nav>
 
-    <header class="relative h-screen flex flex-col justify-center items-center text-center px-4 overflow-hidden">
+    <header class="relative h-screen w-full flex flex-col justify-center items-center text-center overflow-hidden">
         <div class="absolute inset-0 z-0">
-            <img src="hero.jpg" alt="Obsidian Hero" class="w-full h-full object-cover opacity-40">
-            <div class="absolute inset-0 bg-gradient-to-t from-onyx via-transparent to-onyx/60"></div>
+            <img src="hero.jpg" alt="Obsidian Hero" class="w-full h-full object-cover opacity-50">
+            <div class="absolute inset-0 bg-gradient-to-t from-onyx via-transparent to-onyx/30"></div>
         </div>
 
-        <div class="z-10 max-w-6xl w-full">
-            <h1 class="hero-text-shadow font-heading font-bold text-5xl md:text-7xl lg:text-8xl tracking-tight mb-4 text-alabaster uppercase whitespace-nowrap">
+        <div class="z-10 w-full px-4 flex flex-col items-center">
+            <h1 class="hero-text-shadow font-heading font-bold text-[11vw] md:text-[8vw] lg:text-[6rem] leading-none tracking-tight mb-6 text-alabaster uppercase whitespace-nowrap">
                 SHARP. PRECISE. OBSIDIAN.
             </h1>
             
-            <p class="hero-text-shadow font-sans text-lg md:text-2xl text-dimGrey font-light mb-12 tracking-wide">
+            <p class="hero-text-shadow font-sans text-lg md:text-2xl text-alabaster/80 font-light mb-12 tracking-wide max-w-2xl">
                 Specialized Equipment Trading & Creative Consulting.
             </p>
             
-            <a href="#contact" class="inline-block border border-dimGrey px-10 py-4 text-xs font-heading tracking-[0.2em] text-alabaster hover:bg-alabaster hover:text-onyx hover:border-alabaster transition duration-300 uppercase">
+            <a href="#contact" class="inline-block border border-dimGrey px-10 py-4 text-xs font-heading tracking-[0.2em] text-alabaster hover:bg-alabaster hover:text-onyx hover:border-alabaster transition duration-300 uppercase bg-black/20 backdrop-blur-sm">
                 Initialize Project
             </a>
         </div>
@@ -98,6 +100,7 @@
                         <span class="font-heading text-2xl tracking-[0.2em] text-dimGrey group-hover:text-alabaster transition duration-500">THE STUDIO</span>
                     </div>
                     <div class="absolute inset-0 border border-charcoalBlue group-hover:border-alabaster transition duration-500"></div>
+                    <div class="absolute inset-0 bg-charcoalBlue/10 group-hover:bg-transparent transition duration-500"></div>
                 </a>
                 
                 <a href="https://www.afraafrasiabi.com" target="_blank" class="group relative block h-80 bg-graphite overflow-hidden">
@@ -105,6 +108,7 @@
                         <span class="font-heading text-2xl tracking-[0.2em] text-dimGrey group-hover:text-alabaster transition duration-500">THE ARTIST</span>
                     </div>
                     <div class="absolute inset-0 border border-charcoalBlue group-hover:border-alabaster transition duration-500"></div>
+                    <div class="absolute inset-0 bg-charcoalBlue/10 group-hover:bg-transparent transition duration-500"></div>
                 </a>
             </div>
         </div>
